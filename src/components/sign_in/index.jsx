@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 
-function Copyright() {
+const Copyright = () => {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function SignIn() {
+const SignIn = ({ setName }) => {
   const classes = useStyles()
   
   return (
@@ -87,3 +87,5 @@ export default function SignIn() {
     </Container>
   )
 }
+
+export default SignIn
