@@ -21,13 +21,13 @@ const InputField = ({ name }) => {
   return(
     <div className={ classes.root }>
       <Grid container>
-        <Grid item={ true } xs={ 1 }>
+        <Grid item xs={ 1 }>
           <Avatar src={ avatarPath }/>
         </Grid>
-        <Grid item={ true } xs={ 10 }>
+        <Grid item xs={ 10 }>
           <MessageField name={ name } text={ text } setText={ setText }/>
         </Grid>
-        <Grid item={ true } xs={ 1 }>ボタン</Grid>
+        <Grid item xs={ 1 }>ボタン</Grid>
       </Grid>
     </div>
   )
