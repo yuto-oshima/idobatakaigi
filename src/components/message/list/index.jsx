@@ -1,8 +1,18 @@
 import React from 'react'
+import { makeStyles } from '@material-ui/core'
 
-const List = props => {
+const useStyles = makeStyles({
+  root: {
+    gridRow: 1,
+  },
+})
+
+const List = ({}) => {
  
-  return(<div>Message List</div>)
+  const classes = useStyles()
+  return(
+    <div className={ classes.root }>Message List</div>
+  )
 }
 
 export default List
