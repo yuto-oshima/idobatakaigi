@@ -1,8 +1,12 @@
 const path = require('path')
+const dotenv = require('dotenv')
+const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const outputPath = path.resolve(__dirname, 'dist')
+
+const env = dotenv.config().parsed
 
 module.exports = {
   entry: './src/packs/index.js',
@@ -57,6 +61,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(env)
     }),
   ],
   optimization: {
