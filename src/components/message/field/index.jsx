@@ -5,12 +5,14 @@ import {
   pushMessage
 } from '../../../firebase'
 
-const Field = ({ name, text, setText }) => {
+const Field = ({ inputEl, name, text, setText }) => {
 
   const [isComposed, setIsComposed] = useState(false)
 
   return(
     <TextField
+      autoFocus
+      inputRef={ inputEl }
       value={ text }
       fullWidth={ true }
       onChange={ e => setText(e.target.value)}
@@ -19,7 +21,6 @@ const Field = ({ name, text, setText }) => {
 
         const val = e.target.value
         if(e.key === 'Enter' && val) {
-          console.log('push message to firebase.')
           pushMessage({ name, text })
           setText('')
           e.preventDefault()
