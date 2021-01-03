@@ -20,7 +20,7 @@ const Field = ({ name, text, setText }) => {
         const val = e.target.value
         if(e.key === 'Enter' && val) {
           console.log('push message to firebase.')
-          pushMessage({ name: 'Yuto', text })
+          pushMessage({ name, text })
           setText('')
           e.preventDefault()
         }
